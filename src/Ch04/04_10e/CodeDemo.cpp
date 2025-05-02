@@ -2,6 +2,10 @@
 // Exercise 04_10
 // The String Class, by Eduardo Corpeño 
 
+/* 
+MODIFIED TO SHOW C++ STRINGS
+*/
+
 #include <iostream>
 #include <string>
 
@@ -20,3 +24,4 @@ int main(){
     std::cout << std::endl << std::endl;
     return 0;
 }
+

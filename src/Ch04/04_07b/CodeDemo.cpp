@@ -14,7 +14,7 @@ int main(){
     points.push_back(std::complex<double>(-5.3, 6.0));
     points.push_back(std::complex<double>(7.2, 8.9));
 
-    std::cout << "The first real part: " << points.begin()->real()  << std::endl;
+    std::cout << "The first real part: " << points.begin()->real() << std::endl;
     std::cout << "Imaginary part at index 1: " << points[1].imag() << std::endl;
     std::cout << "Next to last real: " << prev(points.end(), 2)->real() << std::endl;
     std::cout << "Last imaginary: " << (points.end() - 1)->imag() << std::endl;
