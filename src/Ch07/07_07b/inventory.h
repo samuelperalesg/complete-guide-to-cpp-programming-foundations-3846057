@@ -3,14 +3,13 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
+#include <iostream>
 #include <vector>
 #include <string>
 #include <algorithm>
-#include <iostream>
 
 class Inventory{
 public:
-    // Constructor
     Inventory();
 
     // Overloaded Constructor
@@ -20,13 +19,13 @@ public:
     ~Inventory();
 
     // Add item to inventory
-    Inventory& operator+=(const std::string& item);
+    void addItem(const std::string& item);
 
     // Remove item from inventory
-    Inventory& operator-=(const std::string& item);
+    void removeItem(const std::string& item);
 
     // Access item by index
-    std::string operator[](int index) const;
+    std::string getItem(int index) const;
 
     // Get number of items in the inventory
     int getItemCount() const;
@@ -35,7 +34,7 @@ public:
     void displayInventory() const;
 
 private:
-    std::vector<std::string> *items; // Pointer to a vector of items
+    std::vector<std::string> *items;
     int capacity; // Maximum number of items allowed
 };
 

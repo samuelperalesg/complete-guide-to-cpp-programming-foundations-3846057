@@ -1,6 +1,8 @@
 #include "inventory.h"
 
-// Default Constructor
+
+
+ // Default Constructor
 Inventory::Inventory(): capacity(10){
     items = new std::vector<std::string>();
 }
@@ -15,34 +17,32 @@ Inventory::~Inventory(){
     delete items; // Prevent memory leak by deallocating the dynamic vector
 }
 
-// Overload += operator to add an item
-Inventory& Inventory::operator+=(const std::string& item){
+// Add item to inventory
+void Inventory::addItem(const std::string& item){
     if (items->size() < capacity)
         items->push_back(item);
     else
         std::cout << "Inventory is full, cannot add " << item << std::endl;
-    return *this;
 }
 
-// Overload -= operator to remove an item
-Inventory& Inventory::operator-=(const std::string& item){
+// Remove item from inventory
+void Inventory::removeItem(const std::string& item){
     auto it = std::find(items->begin(), items->end(), item);
     if (it != items->end())
         items->erase(it);
     else
         std::cout << "Item " << item << " not found in inventory" << std::endl;
-    return *this;
 }
 
-// Overload [] operator to access item by index
-std::string Inventory::operator[](int index) const{
+// Access item by index
+std::string Inventory::getItem(int index) const{
     if (index >= 0 && index < items->size())
         return (*items)[index];
     else
         return "Index out of bounds";
 }
 
-// Get number of items in the inventory
+    // Get number of items in the inventory
 int Inventory::getItemCount() const{
     return items->size();
 }
